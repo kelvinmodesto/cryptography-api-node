@@ -1,9 +1,9 @@
-import Exception, { RequestErrorException } from './exception';
+import Exception, { RequestError } from './exception';
 
 const main = {
   Exception,
-  RequestErrorException
+  RequestError
 };
 
-export { main, Exception, RequestErrorException };
+export { main, Exception, RequestError };
 export default main;

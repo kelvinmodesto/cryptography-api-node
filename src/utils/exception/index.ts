@@ -1,8 +1,8 @@
-import RequestErrorException from './requestErrorException';
+import RequestError from './requestError';
 
 const main = {
-  RequestErrorException
+  RequestError
 };
 
-export { main, RequestErrorException };
+export { main, RequestError };
 export default main;
