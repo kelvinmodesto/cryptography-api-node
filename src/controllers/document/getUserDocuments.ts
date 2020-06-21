@@ -5,8 +5,8 @@ import { RequestError } from '../../utils';
 export default function listUserDocuments(router: any = {}, context: ContextStrategy) {
   router.get('/', async (req: any, res: any, next: any) => {
     try {
-      const { value } = req.query;
-      const list = await context.read(_.pick({ value }));
+      const { value, _id } = req.query;
+      const list = await context.read(_.pick({ value, _id }));
       let data = list;
       if (list.length > 0) {
         data = list.map((it: any) => {

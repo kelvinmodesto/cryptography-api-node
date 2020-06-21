@@ -32,11 +32,11 @@ ${process.env.DB_PORT_MONGO}/${process.env.DB_NAME_MONGO}`;
     return this.model.find(item);
   }
 
-  public async update(id: number, item: any = {}) {
+  public async update(id: string, item: any = {}) {
     return this.model.updateOne({ _id: id }, { $set: item });
   }
 
-  public async delete(id: number) {
+  public async delete(id: string) {
     return this.model.deleteOne({ _id: id });
   }
 
