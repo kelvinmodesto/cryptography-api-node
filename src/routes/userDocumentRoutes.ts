@@ -8,8 +8,7 @@ import { MongoDBStrategy as MongoDB } from '../db';
 import {
   createUserDocument,
   deleteUserDocument,
-  getUserDocument,
-  listUserDocuments,
+  getUserDocuments,
   updateUserDocument
 } from '../controllers';
 
@@ -22,8 +21,7 @@ export default function userDocumentRouter() {
 
   createUserDocument(router, context);
   deleteUserDocument(router, context);
-  getUserDocument(router, context);
-  listUserDocuments(router, context);
+  getUserDocuments(router, context);
   updateUserDocument(router, context);
 
   return router;

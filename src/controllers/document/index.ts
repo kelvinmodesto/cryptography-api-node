@@ -1,14 +1,12 @@
 import createUserDocument from './createUserDocument';
 import deleteUserDocument from './deleteUserDocument';
-import getUserDocument from './getUserDocument';
-import listUserDocuments from './listUserDocuments';
+import getUserDocuments from './getUserDocuments';
 import updateUserDocument from './updateUserDocument';
 
 const main = {
   createUserDocument,
   deleteUserDocument,
-  getUserDocument,
-  listUserDocuments,
+  getUserDocuments,
   updateUserDocument
 };
 
@@ -16,8 +14,7 @@ export {
   main,
   createUserDocument,
   deleteUserDocument,
-  getUserDocument,
-  listUserDocuments,
+  getUserDocuments,
   updateUserDocument
 };
 export default main;
