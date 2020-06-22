@@ -1,8 +1,9 @@
 import { ContextStrategy } from '@db/base';
+import { Router } from 'express';
 import crypto from 'crypto';
 import { RequestError } from '../../utils';
 
-export default function createUserDocument(router: any = {}, context: ContextStrategy) {
+export default function createUserDocument(router: Router, context: ContextStrategy) {
   router.post('/', async (req: any, res: any, next: any) => {
     try {
       const { value } = req.body;
