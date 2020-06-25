@@ -4,6 +4,15 @@ import mongoose from 'mongoose';
 import { ContextStrategy as Context } from '../base';
 
 export default class MongoDBStrategy extends Context {
+  public connection: any;
+  public model: any;
+
+  constructor(connection: any, model: any) {
+    super(connection);
+    this.model = model;
+    this.connection = connection;
+  }
+
   public static buildConnectionString() {
     dotenv.config();
     return `${process.env.DB_MONGO}://${process.env.DB_USER_MONGO}:\
@@ -12,16 +21,8 @@ ${process.env.DB_PORT_MONGO}/${process.env.DB_NAME_MONGO}`;
   }
 
   public static async connect() {
-    await mongoose.connect(this.buildConnectionString(), { useNewUrlParser: true });
+    await mongoose.connect(this.buildConnectionString(), { useNewUrlParser: true, useUnifiedTopology: true });
     return mongoose.connection;
-  }
-  public connection: any;
-  public model: any;
-
-  constructor(connection: any, model: any) {
-    super(connection);
-    this.model = model;
-    this.connection = connection;
   }
 
   public async create(item: any = {}) {
